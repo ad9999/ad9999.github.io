@@ -1,0 +1,8 @@
+.axis .domain {
+    display: none;
+}
+
+.menu-chart {
+    display: inline;
+    width: 300px;
+}

@@ -9,35 +9,128 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-        <style> .chart rect { fill: steelblue } </style>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <link rel="stylesheet" href="css/page.css" />
+        <link rel="stylesheet" href="css/pie-chart.css" />
+        <link rel="stylesheet" href="css/stacked-chart.css" />
     </head>
 
     <body>
-        <header class="container">
-            <h1 class="col-md-8"> <i>Visualisation</i></h1>
-        </header>
+    <div class="container">
+        <h2>Narrative Visualization</h2>
+        <p>
+            Summarized statistics of major immigrant visa issues in last 15 years. Attempt to visualize
+            data obtained from USCIS in order to gain understanding of incline and decline of visa offered by USCIS to
+            help citizen of countries across the globe. Data can become real granular, hence study has been kept to focus on 
+            major time (year) intervals to emphasize trends and and conclusive remarks.
+        </p>
+        <ul class="nav nav-pills">
+            <li class="active"><a data-toggle="pill" href="#home">Overview</a></li>
+            <li><a data-toggle="pill" href="#menu-2005">2005</a></li>
+            <li><a data-toggle="pill" href="#menu-2010">2010</a></li>
+            <li><a data-toggle="pill" href="#menu-2014">2014</a></li>
+            <li><a data-toggle="pill" href="#menu-summary">Summary</a></li>
+        </ul>
+        
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>Overview</h3>
+                <div id="overview-graph"><svg width="960" height="500"></svg></div>
+            </div>
+            <div id="menu-2005" class="tab-pane fade">
+                <h3>Year: 2005, Visa Issued by category and by continent</h3>
+                <div class="menu-chart" id="by-category"></div>
+                <div class="menu-chart" id="by-continent"></div>
+            </div>
+            <div id="menu-2010" class="tab-pane fade">
+                <h3>Year: 2010, Visa Issued by category and by continent</h3>
+                <div class="menu-chart" id="by-category"></div>
+                <div class="menu-chart" id="by-continent"></div>
+            </div>
+            <div id="menu-2014" class="tab-pane fade">
+                    <h3>Year: 2014, Visa Issued by category and by continent</h3>
+                <div class="menu-chart" id="by-category"></div>
+                <div class="menu-chart" id="by-continent"></div>
+            </div>
+            <div id="menu-summary" class="tab-pane fade">
+                <h3>Summary</h3>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form>
+                <h3>Select Region (WORK-IN-PROGRESS)</h3>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check" checked> <span class="label-text">Asia</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">Africa</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">Europe</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">N America</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">S America</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">Oceania</span>
+                    </label>
+                </div>
+            </form>
+    
+        </div>
+        <div class="col-md-4">
+            <form>
+                <h3>Select Visa Category (WORK-IN-PROGRESS)</h3>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check" checked> <span class="label-text">B1B2</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">H1-B</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">H4</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">J1</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">L1</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">L2</span>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
 
-        <main role="main" class="container">
-            <section class="col-md-8">
-                <p>Example from assignment: <span id="data"></span></p>
-                <svg class="chart" width="200" height="500"></svg>
-            </section>
-        </main>
-
-        <script>
-            var data = [4, 18, 15, 26, 3, 42, 32, 20];
-            document.getElementById("data").innerHTML = data;
-            d3.select(".chart")
-                .selectAll("rect")
-                .data(data)
-                .enter().append("rect")
-                .attr("width", 25)
-                .attr("x", function(d, i) { return 20*i; })
-                .attr("y", 400)
-                .transition().duration(3000).delay(1000)
-                .attr("height", function(d) {return 10 * d; })
-                .attr("y", function(d) { return 420 - 10 * d; });
-        </script>
+    <script src="js/overview.js"></script>
+    <script src="js/donut.js"></script>
     </body>
 </html>

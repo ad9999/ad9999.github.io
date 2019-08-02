@@ -1,0 +1,54 @@
+{
+    "by-continent-2005": [
+       {"name": "Asia", "value": 81948},
+       {"name": "Africa", "value": 2816},
+       {"name": "Europe", "value": 24296},
+       {"name": "N America", "value": 4617},
+       {"name": "S America", "value": 8568},
+       {"name": "Oceania", "value": 1787}
+     ],
+     "by-category-2005": [
+       {"name": "B1 Visa", "value": 162298},
+       {"name": "B2 Visa", "value": 48329},
+       {"name": "H1-B Visa", "value": 16160},
+       {"name": "H4 Visa", "value": 5637},
+       {"name": "L1 Visa", "value": 13564},
+       {"name": "L2 Visa", "value": 3591},
+       {"name": "J1 Visa", "value": 81948}
+     ],
+     "by-continent-2010": [
+       {"name": "Asia", "value": 40},
+       {"name": "Africa", "value": 20},
+       {"name": "Europe", "value": 30},
+       {"name": "N America", "value": 35},
+       {"name": "S America", "value": 15},
+       {"name": "Oceania", "value": 5}
+     ],
+     "by-category-2010": [
+       {"name": "B1 Visa", "value": 40},
+       {"name": "B2 Visa", "value": 20},
+       {"name": "H1-B Visa", "value": 30},
+       {"name": "H4 Visa", "value": 35},
+       {"name": "L1 Visa", "value": 15},
+       {"name": "L2 Visa", "value": 5},
+       {"name": "J1 Visa", "value": 45}
+     ],
+     "by-continent-2014": [
+       {"name": "Asia", "value": 40},
+       {"name": "Africa", "value": 20},
+       {"name": "Europe", "value": 30},
+       {"name": "N America", "value": 35},
+       {"name": "S America", "value": 15},
+       {"name": "Oceania", "value": 5}
+     ],
+     "by-category-2014": [
+       {"name": "B1 Visa", "value": 40},
+       {"name": "B2 Visa", "value": 20},
+       {"name": "H1-B Visa", "value": 30},
+       {"name": "H4 Visa", "value": 35},
+       {"name": "L1 Visa", "value": 15},
+       {"name": "L2 Visa", "value": 5},
+       {"name": "J1 Visa", "value": 45}
+     ]
+ 
+   }
